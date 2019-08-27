@@ -10,6 +10,7 @@ const tempTitle = 'klan';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     const instance = axios.create({
@@ -22,22 +23,27 @@ const App = () => {
     const fetchMovies = async (movieTitle) => {
       try {
         let response = await instance.get(`${URL_WITH_KEY}&s=${movieTitle}`);
-        setMovies(response.data.Search); 
+        setMovies(response.data.Search);
         //if data not exist => error
         //if Search not exist => error
         //axios takes care about 30x, 40x => error
-        console.log(response.data.Search);
+        // console.log(response.data.Search);
       } catch(error)  {
         console.log(error);
       }
     }
 
-    fetchMovies(tempTitle);
-  }, [])
+    fetchMovies(filter);
+  }, [filter])
 
+  const handleFilterMovies = (event) => {
+    console.log(event.currentTarget.value);
+    setFilter(event.currentTarget.value);
+  }
   return (
     <div className="App">
-      {movies.map(movie=><p>{movie.Title}</p>)}
+      <input type="search" onChange={handleFilterMovies} />
+      {movies && movies.map(movie=><p>{movie.Title}</p>)}
     </div>
   );
 }
