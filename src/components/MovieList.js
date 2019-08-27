@@ -1,11 +1,24 @@
 import React from 'react';
-import {Grid,Typography} from '@material-ui/core/';
+import {makeStyles} from '@material-ui/core/styles';
+import {Grid} from '@material-ui/core/';
 import MovieItem from './MovieItem';
 
-const MoviesList = ({movies, loading}) => (
-    <Grid container spacing={3}>
-      {(!loading && movies) && movies.map((movie, key)=><MovieItem key={key} movie={movie} />)}
-    </Grid>
-)
+const useStyles = makeStyles(theme => ({
+    container: {
+        width: '100vw',
+        background: 'rgba(230,230,230,0.9)',
+        marginTop: '5em',
+        flexGrow: 1,
+    },
+}));
+
+const MoviesList = ({movies, loading}) => {
+    const classes = useStyles();
+    return (
+        <Grid container spacing={3} className={classes.container}>
+        {(!loading && movies) && movies.map((movie, key)=><MovieItem key={key} movie={movie} />)}
+        </Grid>
+    )
+}
 
 export default  MoviesList;
