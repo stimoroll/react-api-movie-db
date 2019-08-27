@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+//TODO better styles
 const MoviesList = ({movies, loading}) => {
     const classes = useStyles();
     return (

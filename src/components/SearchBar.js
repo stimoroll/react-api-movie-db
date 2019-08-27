@@ -15,7 +15,12 @@ const useStyles = makeStyles(theme => ({
         paddingBottom: '1em'
       },
 }));
-
+//TODO add sobme debounce
+//TODO check for min 3 letters - and add icon of loader here to show loading item 
+//TODO add info about 3 letters
+//TODO add filter for date range - is imposible to search by author as i see
+//TODO add search icon
+//NOTICE thinking about autocomplete
 const SearchBar = ({handleFilterMovies}) => {
     const classes = useStyles();
     return (

@@ -3,10 +3,12 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Grid,Paper,Typography} from '@material-ui/core/';
 import {GET_MOVIE_BY_ID, OmdbIDContext} from '../context';
 
+//TODO add visual style for placeholder and aria
 const Imgplaceholder = () => (
     <div>Sorry. No Image</div>
 )
 
+//TODO add lazy loading for images and checking for 40x errors also
 const MoviePoster = ({posterUrl, posterTitle}) => {
     return (
         <figure>
@@ -28,6 +30,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+//TODO better styles
 const MovieItem = ({movie}) => {
     const classes = useStyles();
     const { dispatch } = useContext(OmdbIDContext);
