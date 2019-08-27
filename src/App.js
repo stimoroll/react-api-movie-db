@@ -77,6 +77,7 @@ const App = () => {
         setMovie(response.data);
         console.log(response.data);
       } catch(error)  {
+        //TODO add display general info about 
         console.log(error);
       } finally {
         setLoading(false);
@@ -93,6 +94,7 @@ const App = () => {
 
   //TODO - better condition for dispaly MovieDetail or MovieList
   //TODO - better loader is required
+  //TODO - if i use contex maybe is better to mve searchfilter also to context
   return (
     <OmdbIDContext.Provider value={{ omdbId, dispatch }}>
       <div className="App">
