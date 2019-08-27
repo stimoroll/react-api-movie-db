@@ -1,10 +1,8 @@
 import React, {useEffect,useState} from 'react';
-import axios from 'axios';
 import './App.css';
-const config = {
-  OMDB_API_KEY: '2e01619a',
-  OMDB_API_URL: 'https://www.omdbapi.com/',
-}
+
+import { instance, URL_WITH_KEY } from './services/movieService';
+
 
 const tempTitle = 'klan';
 
@@ -13,12 +11,7 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    const instance = axios.create({
-      baseURL: `${config.OMDB_API_URL}`,
-      responseType: 'json',
-    });
 
-    const URL_WITH_KEY = `?apikey=${config.OMDB_API_KEY}`;
 
     const fetchMovies = async (movieTitle) => {
       try {
