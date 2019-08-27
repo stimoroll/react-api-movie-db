@@ -3,6 +3,7 @@ import {Grid,Typography} from '@material-ui/core/';
 import './App.css';
 
 import { instance, URL_WITH_KEY } from './services/movieService';
+import SearchBar from './components/SearchBar';
 
 const MovieItem = ({movie}) => {
   const handleMovieClick = (event) => {
@@ -58,9 +59,10 @@ const App = () => {
     console.log(event.currentTarget.value);
     setFilter(event.currentTarget.value);
   }
+
   return (
     <div className="App">
-      <input type="search" onChange={handleFilterMovies} />
+      <SearchBar handleFilterMovies={handleFilterMovies} />
       {loading && <p>loading - please wait</p>}
       <MoviesList movies={movies} loading={loading} />
     </div>
