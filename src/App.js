@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import './App.css';
 const config = {
@@ -8,7 +8,9 @@ const config = {
 
 const tempTitle = 'klan';
 
-function App() {
+const App = () => {
+  const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const instance = axios.create({
       baseURL: `${config.OMDB_API_URL}`,
@@ -19,8 +21,12 @@ function App() {
 
     const fetchMovies = async (movieTitle) => {
       try {
-        let posts = await instance.get(`${URL_WITH_KEY}&s=${movieTitle}`);
-        console.log(posts);
+        let response = await instance.get(`${URL_WITH_KEY}&s=${movieTitle}`);
+        setMovies(response.data.Search); 
+        //if data not exist => error
+        //if Search not exist => error
+        //axios takes care about 30x, 40x => error
+        console.log(response.data.Search);
       } catch(error)  {
         console.log(error);
       }
@@ -31,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-
+      {movies.map(movie=><p>{movie.Title}</p>)}
     </div>
   );
 }
