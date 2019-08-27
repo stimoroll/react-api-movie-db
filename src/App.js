@@ -3,13 +3,24 @@ import './App.css';
 
 import { instance, URL_WITH_KEY } from './services/movieService';
 
-const Movie = ({movie, key}) => (
-  <p key={key}>{movie.Title}</p>
-)
+const Movie = ({movie}) => {
+  const handleMovieClick = (event) => {
+    console.log(event.currentTarget.getAttribute('data-id'));
+  }
+  return (
+    <p data-id={movie.imdbID} onClick={handleMovieClick}>
+      {movie.Title}
+      {movie.Poster}
+      {movie.Type}
+      {movie.Year}
+      {movie.imdbID}
+    </p>
+  )
+}
 
 const App = () => {
   const [movies, setMovies] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('klan'); //TODO remove defalut value afeter coding
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -23,7 +34,7 @@ const App = () => {
         //if data not exist => error
         //if Search not exist => error
         //axios takes care about 30x, 40x => error
-        // console.log(response.data.Search);
+        console.log(response.data.Search);
       } catch(error)  {
         console.log(error);
       } finally {
