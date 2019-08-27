@@ -3,9 +3,6 @@ import './App.css';
 
 import { instance, URL_WITH_KEY } from './services/movieService';
 
-
-const tempTitle = 'klan';
-
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [filter, setFilter] = useState('');
