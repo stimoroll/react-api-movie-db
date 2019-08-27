@@ -20,13 +20,13 @@ const SearchBar = ({handleFilterMovies}) => {
     const classes = useStyles();
     return (
         <form className={classes.container} noValidate autoComplete="off">
-        <TextField
-          id="search-bar"
-          label="Movie Title"
-          className={classes.textField}
-          onChange={handleFilterMovies}
-          margin="normal"
-        />
+            <TextField
+            id="search-bar"
+            label="Movie Title"
+            className={classes.textField}
+            onChange={handleFilterMovies}
+            margin="normal"
+            />
         </form>
     )
 }
