@@ -43,7 +43,7 @@ const App = () => {
   return (
     <div className="App">
       <input type="search" onChange={handleFilterMovies} />
-      {movies && movies.map(movie=><p>{movie.Title}</p>)}
+      {movies && movies.map((movie, key)=><p key={key}>{movie.Title}</p>)}
     </div>
   );
 }
