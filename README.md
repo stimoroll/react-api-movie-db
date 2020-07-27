@@ -1,4 +1,8 @@
 # REACT API connect test
+* Axios
+* Material UI
+* Code splitting
+
 ## DEMO
 https://codesandbox.io/s/github/stimoroll/rxapitest
 
