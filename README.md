@@ -4,7 +4,7 @@
 * Code splitting
 
 ## DEMO
-https://codesandbox.io/s/github/stimoroll/rxapitest
+https://codesandbox.io/s/github/stimoroll/react-api-movie-db
 
 ## DEV
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
