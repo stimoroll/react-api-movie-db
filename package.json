@@ -1,5 +1,5 @@
 {
-  "name": "react_omdb",
+  "name": "react-omdb-api-search",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -30,5 +30,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": [],
+  "description": "react, rx, omdb api"
 }
