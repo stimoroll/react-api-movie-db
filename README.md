@@ -1,6 +1,7 @@
 # REACT OMDB API test project
-
+workshop app for test: 
 - React Hooks: useState, useEffects, useReducer
+- Context
 - Axios
 - Material UI
 - Code splitting
